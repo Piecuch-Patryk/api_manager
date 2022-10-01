@@ -19,4 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('layouts.app');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('layouts.auth');
+
+Route::get('api/nasa', [
+    'as'   => 'nasa.index',
+    'uses' => 'NasaController@index'
+]);

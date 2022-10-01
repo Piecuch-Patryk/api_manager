@@ -3,12 +3,9 @@
 @section('header')
 <header class="container-fluid py-5">
     <div class="row justify-content-around align-items-center">
-        <div class="col-12 col-lg-5 text-center text-muted">
-            <h1 class="py-4">Awesome APIs here!</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, molestiae blanditiis obcaecati unde pariatur recusandae tempore. Asperiores rem eos, dolor voluptatibus facere commodi eveniet autem? Dolores ullam nisi repudiandae rem?</p>
-        </div>
-        <div class="col-12 col-lg-5">
-            <img src="/images/header.jpg" class="img-fluid rounded-2 shadow-lg">
+        <div class="col-12 text-center text-muted">
+            <h1 class="py-4">Nasa API</h1>
+            <p>Dacere commodi eveniet autem? Dolores ullam nisi repudiandae rem?</p>
         </div>
     </div>
 </header>
