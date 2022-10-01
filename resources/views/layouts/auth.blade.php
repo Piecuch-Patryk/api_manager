@@ -20,7 +20,7 @@
     <div id="app">        
         @include('shared.pagenav')
 
-        <!-- @yield('header') -->
+        @yield('header')
 
         <main class="py-4">
             @yield('content')

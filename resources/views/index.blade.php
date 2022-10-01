@@ -32,7 +32,7 @@
                     @if($i != 0)
                     <a href="#" class="btn btn-outline-info">Soon...</a>
                     @else
-                    <a href="{{URL::route('nasa.index')}}" class="btn btn-outline-info">Click for more!</a>
+                    <a href="#" class="btn btn-outline-info">Click for more!</a>
                     @endif
 
                 </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('main')->middleware('guest');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('layouts.auth');
 
-Route::get('api/nasa', [
-    'as'   => 'nasa.index',
-    'uses' => 'NasaController@index'
-]);
+Route::controller(ApiController::class)->group(function () {
+    Route::get('/home/api', 'index');
+    Route::get('/home/api/create', 'create')->middleware('auth');
+});
+

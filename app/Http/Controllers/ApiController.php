@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\Api;
 
 class ApiController extends Controller
 {
@@ -14,6 +15,15 @@ class ApiController extends Controller
     public function index()
     {
         //
+    }
+
+    /**
+     * Create new resource.
+     *
+     */
+    public function create()
+    {
+        return view('auth.api.create');
     }
 
     /**
