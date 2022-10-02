@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Api;
 
 class ApiController extends Controller
 {
@@ -18,12 +17,13 @@ class ApiController extends Controller
     }
 
     /**
-     * Create new resource.
+     * Show the form for creating a new resource.
      *
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('auth.api.create');
+        //
     }
 
     /**
@@ -44,6 +44,17 @@ class ApiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }
