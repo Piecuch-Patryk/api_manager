@@ -15,7 +15,9 @@ class ApiController extends Controller
      */
     public function index()
     {
-        //
+        return view('auth.api.index', [
+            'listings' => Api::latest()->get()
+        ]);
     }
 
     /**
@@ -39,7 +41,7 @@ class ApiController extends Controller
         $data = $request->validated();
         Api::create($data);
 
-        return back()->with('message', 'New API created suucessfully!');
+        return to_route('api.index')->with('message', 'New API created suucessfully!');
     }
 
     /**
@@ -61,7 +63,9 @@ class ApiController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('auth.api.edit', [
+            'listing' => Api::find($id)->get()
+        ]);
     }
 
     /**

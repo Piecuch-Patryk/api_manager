@@ -25,5 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::controller(ApiController::class)->group(function () {
     Route::get('/home/api/create', 'create')->middleware('auth')->name('api.create');
     Route::post('/home/api/store', 'store')->name('api.store');
+    Route::get('/home/api', 'index')->name('api.index');
+    Route::get('/home/api/edit/{id}', 'edit')->name('api.edit');
 });
 
