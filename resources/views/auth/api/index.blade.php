@@ -13,7 +13,14 @@
                 <div class="card-body">
                     <h5 class="card-title fs-3">{{$listing['api-name']}}</h5>
                     <p class="card-text">{{$listing['api-desc']}}</p>
-                    <a href="{{route('api.edit', ['id' => $listing['id']])}}" class="btn btn-sm btn-info">Edit</a>
+                    <div class="d-flex justify-content-around">
+                        <a href="{{route('api.edit', ['id' => $listing['id']])}}" class="btn btn-sm btn-info">Edit</a>
+                        <form method="POST" action="{{ route('api.delete', ['id' => $listing]) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

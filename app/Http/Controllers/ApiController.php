@@ -81,7 +81,7 @@ class ApiController extends Controller
         $data = $request->validated();
         Api::where('id', $id)->update($data);
 
-        return to_route('api.index')->with(['message' => $data['api-name'] . ' updated successfully!']);
+        return to_route('api.index')->with('message', $data['api-name'] . ' updated successfully!');
     }
 
     /**
@@ -90,8 +90,10 @@ class ApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(int $id)
     {
-        //
+        $apiName = Api::find($id)->value('api-name');
+        Api::destroy($id);
+        return to_route('api.index')->with('message', $apiName . ' deleted successfully!');
     }
 }
