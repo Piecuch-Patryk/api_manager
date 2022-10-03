@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('layouts.auth');
 
 Route::controller(ApiController::class)->group(function () {
-    Route::get('/home/api', 'index');
-    Route::get('/home/api/create', 'create')->middleware('auth');
+    Route::get('/home/api/create', 'create')->middleware('auth')->name('api.create');
+    Route::post('/home/api/store', 'store')->name('api.store');
 });
 

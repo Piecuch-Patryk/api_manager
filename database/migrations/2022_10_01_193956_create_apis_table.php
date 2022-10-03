@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('apis', function (Blueprint $table) {
             $table->id();
+            $table->string('api-name');
+            $table->longText('api-desc');
+            $table->string('api-url');
+            $table->string('api-endpoint-name');
+            $table->longText('api-endpoint-desc');
+            $table->string('api-endpoint');
             $table->timestamps();
         });
     }

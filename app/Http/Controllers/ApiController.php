@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Api;
 use Illuminate\Http\Request;
+use App\Http\Requests\ApiCreateRequest;
 
 class ApiController extends Controller
 {
@@ -23,7 +25,7 @@ class ApiController extends Controller
      */
     public function create()
     {
-        //
+        return view('auth.api.create');
     }
 
     /**
@@ -32,9 +34,12 @@ class ApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ApiCreateRequest $request)
     {
-        //
+        $data = $request->validated();
+        Api::create($data);
+
+        return back()->with('message', 'New API created suucessfully!');
     }
 
     /**

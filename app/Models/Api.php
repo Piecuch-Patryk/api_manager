@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Api extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'api-name',
+        'api-desc',
+        'api-url',
+        'api-endpoint-name',
+        'api-endpoint-desc',
+        'api-endpoint',
+    ];
 }
