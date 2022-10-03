@@ -72,13 +72,16 @@ class ApiController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ApiCreateRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ApiCreateRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        Api::where('id', $id)->update($data);
+
+        return to_route('api.index')->with(['message' => $data['api-name'] . ' updated successfully!']);
     }
 
     /**

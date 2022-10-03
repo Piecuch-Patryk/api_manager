@@ -23,9 +23,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('layouts.auth');
 
 Route::controller(ApiController::class)->group(function () {
-    Route::get('/home/api/create', 'create')->middleware('auth')->name('api.create');
-    Route::post('/home/api/store', 'store')->name('api.store');
+    Route::get('/home/api/create', 'create')->name('api.create')->middleware('auth');
+    Route::post('/home/api/store', 'store')->name('api.store')->middleware('auth');
     Route::get('/home/api', 'index')->name('api.index');
-    Route::get('/home/api/edit/{id}', 'edit')->name('api.edit');
+    Route::get('/home/api/edit/{id}', 'edit')->name('api.edit')->middleware('auth');
+    Route::put('/home/api/update/{id}', 'update')->name('api.update')->middleware('auth');
 });
 
