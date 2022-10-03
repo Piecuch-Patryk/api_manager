@@ -63,8 +63,9 @@ class ApiController extends Controller
      */
     public function edit($id)
     {
+        $data = Api::find($id);
         return view('auth.api.edit', [
-            'listing' => Api::find($id)->get()
+            'listing' => $data
         ]);
     }
 
