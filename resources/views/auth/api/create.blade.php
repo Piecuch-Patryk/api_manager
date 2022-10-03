@@ -6,11 +6,7 @@
 
 @section('content')
 
-@if(session()->has('message'))
-<div class="text-center">
-    <p class="text-success">{{session('message')}}</p>
-</div>
-@endif
+@include('shared.flash-message')
 
 <div class="container p-5">
     <form method="POST" action="{{ route('api.store') }}" class="row needs-validation justify-content-center align-items-center" novalidate>
