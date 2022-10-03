@@ -19,12 +19,14 @@
 <body>
     <div id="app">        
         @include('shared.pagenav')
-        
+
         @yield('header')
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+    @yield('scripts', '')
 </body>
 </html>
